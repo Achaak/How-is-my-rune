@@ -1,24 +1,24 @@
-#ErrorDocument 400 /home
-#ErrorDocument 401 /home
-#ErrorDocument 402 /home
-#ErrorDocument 403 /home
-#ErrorDocument 404 /home
-#ErrorDocument 405 /home
-#ErrorDocument 500 /home
-#ErrorDocument 501 /home
-#ErrorDocument 502 /home
-#ErrorDocument 503 /home
-#ErrorDocument 504 /home
-#ErrorDocument 505 /home
+ErrorDocument 400 /home
+ErrorDocument 401 /home
+ErrorDocument 402 /home
+ErrorDocument 403 /home
+ErrorDocument 404 /home
+ErrorDocument 405 /home
+ErrorDocument 500 /home
+ErrorDocument 501 /home
+ErrorDocument 502 /home
+ErrorDocument 503 /home
+ErrorDocument 504 /home
+ErrorDocument 505 /home
 
-#Options -Indexes
+Options -Indexes
 RewriteEngine On
 
-#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-#RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-#RewriteCond %{HTTPS} !on
-#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteRule ^$		controller/index.php    [L]
 RewriteRule ^home$  controller/index.php    [L]
