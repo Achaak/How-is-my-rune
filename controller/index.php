@@ -3,7 +3,13 @@
 <head>
     <base href="/">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2433389260772608",
+    enable_page_level_ads: true
+  });
+</script>
     <title>How is my rune ? | SWRATE</title>
     <meta name="description" content="" />
     <meta property="og:title" content="How is my rune ? | SWRATE" />
@@ -18,7 +24,9 @@
 
     <!-- CSS -->
         <link type="text/css" rel="stylesheet" href="view/css/common.css">
+        
         <link type="text/css" rel="stylesheet" href="framework/jquery-ui/jquery-ui.min.css">
+        <link type="text/css" rel="stylesheet" href="framework/flexbox/flexboxgrid.min.css">
     <!-- END CSS -->
 
     <link rel="icon" href="view/pictures/logo-swrate.ico">
@@ -32,20 +40,29 @@
 
         <!-- INFO MODAL -->
             <div class='modal-info modal-background'>
-                <div class='modal-content'>
-                    <div class='close'>×</div>
-                    <div class='part'>
-                        <h2>How to use ?</h2>
-                        <p></p>
-                    </div>
-                    <div class='part'>
-                        <h2>Credit</h2>
-                        <p>Create by <a href='https://github.com/Achaak' target='_blank'>Achak</a></p>
-                    </div>
-                    <div class='part'>
-                        <h2>Source</h2>
-                        <p>These calculations are based on Barion's Rune Efficiency Theory.</p>
-                        <p>The utility of the runes is based on <a href='https://www.reddit.com/user/Aknologya' target='_blank'>Aknologya</a>'s graphic on Reddit.</p>
+                <div class='modal-content-flex'>
+                    <div class='modal-content'>
+                        <div class='close'>×</div>
+                        <div class='part'>
+                            <h2>How to use ?</h2>
+                            <p>Enter the stats of your rune and look at the efficiency of this one. It's simple ! :D</p>
+                        </div>
+                        <div class='part'>
+                            <h2>Credit</h2>
+                            <p>Create by <a href='https://github.com/Achaak' target='_blank'>Achak</a></p>
+                        </div>
+                        <div class='part'>
+                            <h2>Source</h2>
+                            <p>These calculations are based on Barion's Rune Efficiency Theory.</p>
+                            <p>The utility of the runes is based on <a href='https://www.reddit.com/user/Aknologya' target='_blank'>Aknologya</a>'s graphic on Reddit.</p>
+                        </div>
+                        
+                        <div class='part footer'>
+                            <ul>
+                                <li><a href='https://github.com/Achaak/How-is-my-rune'>Github</a></li>
+                                <li>© Achak <?php echo date('Y'); ?></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,7 +76,12 @@
         </header>
     <!-- END HEADER -->
     
-    
+    <nav>
+        <ul>
+            <li class='selected'>Test a rune</li>
+            <li>Test my runes</li>
+        </ul>
+    </nav>
 
     <!-- SECTION -->
         <section>
@@ -246,6 +268,39 @@
                     </tr>
                 </table>
             </article>
+
+            <article class=''>
+                <div class='menu'>
+                    <div class='tools'>
+
+                    </div>
+
+                    <div class='upload'>
+                        <form class='import-json'>
+                            <div class="input-file-container">
+                                <input type="file" id="input-file" class='input-file' name="input-file" accept=".json">
+                                <label for="input-file" class='text-input-file'>Select JSON file</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th><span>Set</span></th>
+                        <th><span>Slot</span></th>
+                        <th><span>Grade</span></th>
+                        <th><span>Level</span></th>
+                        <th><span>Eff.%</span></th>
+                        <th><span>Max Eff.%</span></th>
+                        <th><span></span></th>
+                        <th><span></span></th>
+                        <th><span></span></th>
+                        <th><span></span></th>
+                        <th><span>Utilities</span></th>
+                    </tr>
+                </table>
+            </article>
         </section>
     <!-- END SECTION -->
 
@@ -253,7 +308,6 @@
     
     <!-- FOOTER -->
         <footer>
-
         </footer>
     <!-- END FOOTER -->
 
@@ -262,9 +316,12 @@
     <!-- JAVASCRIPT -->
         <script src="framework/jquery/jquery.min.js"></script>
         <script src="framework/jquery-ui/jquery-ui.min.js"></script>
+        
         <script src="controller/js/rune.js"></script>
         <script src="controller/js/rune-efficiency.js"></script>
         <script src="controller/js/modale.js"></script>
+        <script src="controller/js/nav.js"></script>
+        <script src="controller/js/import-rune.js"></script>
         
         <script type="text/javascript">
         </script>

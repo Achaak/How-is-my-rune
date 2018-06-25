@@ -1,7 +1,7 @@
 var runeUtility = [
     { "utility" : "Nuker", "stats" : ["SPD", "CRate", "CDmg" ] },
-        { "utility" : "Att nuker", "stats" : ["SPD", "ATK%" , "CRate"] },
-        { "utility" : "Att nuker", "stats" : ["SPD", "ATK%" , "CDmg" ] },
+        { "utility" : "Atk nuker", "stats" : ["SPD", "ATK%" , "CRate"] },
+        { "utility" : "Atk nuker", "stats" : ["SPD", "ATK%" , "CDmg" ] },
 
         { "utility" : "Def nuker", "stats" : ["SPD", "DEF%" , "CRate"] },
         { "utility" : "Def nuker", "stats" : ["SPD", "DEF%" , "CDmg" ] },
@@ -15,13 +15,15 @@ var runeUtility = [
 
 
     { "utility" : "Slow nuker", "stats" : ["CRate", "CDmg" ] },
-        { "utility" : "Slow att nuker", "stats" : ["ATK%", "CRate", "CDmg"] },
+        { "utility" : "Slow atk nuker", "stats" : ["ATK%", "CRate", "CDmg"] },
 
         { "utility" : "Slow def nuker", "stats" : ["DEF%" , "CRate", "CDmg"] },
 
         { "utility" : "Slow hp nuker", "stats" : ["HP%"  , "CRate", "CDmg"] },
 
         { "utility" : "Slow accuracy nuker", "stats" : ["ACC", "CRate", "CDmg"] },
+        { "utility" : "Slow accuracy nuker", "stats" : ["ACC", "ATK%" , "CDmg"] },
+        { "utility" : "Slow accuracy nuker", "stats" : ["ACC", "CRate", "ATK%"] },
 
 
 
@@ -42,14 +44,14 @@ var runeUtility = [
 
 
 
-    { "utility" : "Bombers"       , "stats" : ["SPD", "ATK%", "ACC"] },
+    { "utility" : "Bombers" , "stats" : ["SPD", "ATK%", "ACC"] },
 
 
 
-    { "utility" : "Raid monster"  , "stats" : ["SPD", "RES", "CRate"] },
-    { "utility" : "Raid monster"  , "stats" : ["SPD", "RES", "CDmg" ] },
-    { "utility" : "Raid monster"  , "stats" : ["SPD", "RES", "HP%"  ] },
-    { "utility" : "Raid monster"  , "stats" : ["SPD", "RES", "DEF%" ] },
+    { "utility" : "Raid monster", "stats" : ["SPD", "RES", "CRate"] },
+    { "utility" : "Raid monster", "stats" : ["SPD", "RES", "CDmg" ] },
+    { "utility" : "Raid monster", "stats" : ["SPD", "RES", "HP%"  ] },
+    { "utility" : "Raid monster", "stats" : ["SPD", "RES", "DEF%" ] },
 
-    { "utility" : "Raid frontliners"  , "stats" : ["RES", "DEF%", "HP%"] }
+    { "utility" : "Raid frontliners" , "stats" : ["RES", "DEF%", "HP%"] }
 ];
