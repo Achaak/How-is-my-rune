@@ -24,7 +24,7 @@
 
     <!-- CSS -->
         <link type="text/css" rel="stylesheet" href="view/css/common.css">
-        
+
         <link type="text/css" rel="stylesheet" href="framework/jquery-ui/jquery-ui.min.css">
         <link type="text/css" rel="stylesheet" href="framework/flexbox/flexboxgrid.min.css">
     <!-- END CSS -->
@@ -269,7 +269,7 @@
                 </table>
             </article>
 
-            <article class=''>
+            <article class='runes-tester'>
                 <div class='menu'>
                     <div class='tools'>
 
@@ -279,24 +279,42 @@
                         <form class='import-json'>
                             <div class="input-file-container">
                                 <input type="file" id="input-file" class='input-file' name="input-file" accept=".json">
-                                <label for="input-file" class='text-input-file'>Select JSON file</label>
+                                <div class='text-input-file'>
+                                    <img src='view/pictures/load.gif' class='import-loader' label='Icone de chargement'>
+                                    <label for="input-file" class='name-input-file'>Select JSON file</label>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <table>
+                <table class='list-runes'>
                     <tr>
                         <th><span>Set</span></th>
                         <th><span>Slot</span></th>
                         <th><span>Grade</span></th>
                         <th><span>Level</span></th>
+                        
+                        <th><span>Type</span></th>
+                        <th><span>Value</span></th>
+
+                        <th><span>Type</span></th>
+                        <th><span>Value</span></th>
+
+                        <th><span>HP%</span></th>
+                        <th><span>HP</span></th>
+                        <th><span>DEF%</span></th>
+                        <th><span>DEF</span></th>
+                        <th><span>ATK%</span></th>
+                        <th><span>ATK</span></th>
+                        <th><span>SPD</span></th>
+                        <th><span>CRate</span></th>
+                        <th><span>CDmg</span></th>
+                        <th><span>RES</span></th>
+                        <th><span>ACC</span></th>
+
                         <th><span>Eff.%</span></th>
                         <th><span>Max Eff.%</span></th>
-                        <th><span></span></th>
-                        <th><span></span></th>
-                        <th><span></span></th>
-                        <th><span></span></th>
                         <th><span>Utilities</span></th>
                     </tr>
                 </table>
@@ -317,11 +335,12 @@
         <script src="framework/jquery/jquery.min.js"></script>
         <script src="framework/jquery-ui/jquery-ui.min.js"></script>
         
-        <script src="controller/js/rune.js"></script>
-        <script src="controller/js/rune-efficiency.js"></script>
+        <script src="controller/js/rune-tools.js"></script>
         <script src="controller/js/modale.js"></script>
         <script src="controller/js/nav.js"></script>
-        <script src="controller/js/import-rune.js"></script>
+        <script src="controller/js/import-runes.js"></script>
+        <script src="controller/js/test-a-rune.js"></script>
+        <script src="controller/js/test-my-runes.js"></script>
         
         <script type="text/javascript">
         </script>

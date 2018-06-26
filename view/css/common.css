@@ -24,10 +24,6 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-article:nth-child(n+1) {
-    display: none;
-}
-
 /* HEADER */
     header {
         width: 100%;
@@ -74,6 +70,10 @@ article:nth-child(n+1) {
 
 /* SECTION */
     /* ARTICLE */
+        article:not(:first-child) {
+            display: none;
+        }
+
         /* RUNE-TESTER */
             article.rune-tester {
                 margin: auto;
@@ -163,34 +163,29 @@ article:nth-child(n+1) {
         /* RUNES-TESTER */
             article.runes-tester {
                 margin: auto;
-                width: 800px;
+                width: 100%;
             }
 
             /* MENU */
+                article.runes-tester .menu {                    
+                    width: 800px;
+                    margin: auto;
+                }
                 /* TOOLS */
-                
+                    .tools {
+                        margin-top: 50px;
+                    }
                 /* END TOOLS */
 
                 /* FORM IMPORT */
                     form.import-json .input-file-container {
                         position: relative;
                         width: 100%;
-                        height: 200px;
+                        height: 100px;
                     }
                     form.import-json .input-file-container:hover .text-input-file {
                         background-color: #232323;
                     }
-                        form.import-json .text-input-file {
-                            display: block;
-                            height: 100%;
-                            text-align: center;
-                            padding-top: 85px;
-                            border: 3px dotted gainsboro;
-                            color: gainsboro;
-                            font-size: 1em;
-                            transition: all .4s;
-                            cursor: pointer;
-                        }
                         form.import-json .input-file {
                             position: absolute;
                             display: block;
@@ -201,6 +196,24 @@ article:nth-child(n+1) {
                             opacity: 0;
                             cursor: pointer;
                         }
+                            form.import-json .text-input-file {    
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100%;
+                                text-align: center;
+                                border: 3px dotted gainsboro;
+                                color: gainsboro;
+                                font-size: 1em;
+                                transition: all .4s;
+                                cursor: pointer;
+                            }
+                                form.import-json .text-input-file img {
+                                    width: 40px;
+                                    height: 40px;
+                                    margin-right: 10px;
+                                    display: none;
+                                }
                 /* END FORM IMPORT */
             /* END MENU */
 
@@ -208,13 +221,17 @@ article:nth-child(n+1) {
                 article.runes-tester table {
                     width: 100%;
                     border-collapse: collapse;  
+                    margin-top: 50px;
                 }
-                    article.rune-tester table td, article.rune-tester table th {
-                        padding: 2px;
+                    article.runes-tester table td, article.runes-tester table th {
+                        padding: 3px 5px;
+                        text-align: left;
+                        border: 1px solid #404040;
+                        color: #DCDCDC;
                     }
-                        article.rune-tester table span {
-                            color: #DCDCDC;
+                        article.runes-tester table span {
                             font-size: 1.2em;
+                            color: #fd9a00;
                         }
             /* END TABLE */
         /* END RUNES-TESTER */
@@ -250,6 +267,7 @@ article:nth-child(n+1) {
             justify-content: center;
             align-items: center;
             display: none;
+            z-index: 10;
         }
             .modal-content-flex {
                 display: flex;
