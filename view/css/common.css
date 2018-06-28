@@ -212,6 +212,14 @@ select {
                                 height: 30px;
                                 -moz-appearance: textfield;
                             }
+                            .tools .ui-slider {
+                                margin: 10px;
+                            }
+                            .tools .value-slider {
+                                color: orange;
+                                font-weight: bold;
+                                float: right;
+                            }
                             .tools label {
                                 color: gainsboro;
                                 font-weight: bold;

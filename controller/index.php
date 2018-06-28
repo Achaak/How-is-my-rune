@@ -351,21 +351,26 @@
                                     <span>ACC</span>
                                 </div>                                
                             </div>
+                            
 
-                            <div class='col-md-4 tool input-multi-choice'>
-                                <label for='search-quality'>Quality</label>
-                                <div class='selected' id='search-quality'>
-
+                            <div class='col-md-4 tool'>
+                                <label for='range-slider-grade'>Grade</label>
+                                <span class='value-slider'>1 - 6</span>
+                                <div id='range-slider-grade'>
                                 </div>
-                                <div class='possible-choice'>
-                                    <span>Unknown</span>
-                                    <span>Normal</span>
-                                    <span>Magic</span>
-                                    <span>Rare</span>
-                                    <span>Hero</span>
-                                    <span>Legendary</span>
-                                </div>                                
                             </div>
+                            
+                            <div class='col-md-4 tool'>
+                                <label for='range-slider-level'>Level</label>
+                                <span class='value-slider'>0 - 15</span>
+                                <div id='range-slider-level'>
+                                </div>
+                            </div>
+
+
+                            <div class='col-md-4 tool'>
+                            </div>
+
 
                             <div class='col-md-4 tool'>
                                 <label for='search-location'>Location</label>
@@ -398,6 +403,21 @@
                                     <span>Slow DEF nuker</span>
                                     <span>Slow healer/support</span>
                                     <span>Slow HP nuker</span>
+                                </div>                                
+                            </div>
+
+                            <div class='col-md-4 tool input-multi-choice'>
+                                <label for='search-quality'>Quality</label>
+                                <div class='selected' id='search-quality'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>Unknown</span>
+                                    <span>Normal</span>
+                                    <span>Magic</span>
+                                    <span>Rare</span>
+                                    <span>Hero</span>
+                                    <span>Legendary</span>
                                 </div>                                
                             </div>
                         </div>
@@ -502,8 +522,41 @@
         <script src="controller/js/test-my-runes-table.js"></script>
         
         <script type="text/javascript">
+            var minSliderLevel = 0;
+            var maxSliderLevel = 15;
+            var minSliderGrade = 1;
+            var maxSliderGrade = 6;
+            
             $(document).ready(function(){   
                 $("table.sort").stupidtable();
+
+                $("#range-slider-level").slider({
+                    range: true,
+                    min: 0,
+                    max: 15,
+                    values: [ 0, 15 ],
+                    slide: function( event, ui ) {
+                        minSliderLevel = ui.values[0];
+                        maxSliderLevel = ui.values[1];
+
+                        $(event.target).parent().find('.value-slider').html(ui.values[0] + ' - ' + ui.values[1]);
+                        toolsDisplayRunes();
+                    }
+                });                
+
+                $("#range-slider-grade").slider({
+                    range: true,
+                    min: 1,
+                    max: 6,
+                    values: [ 1, 6 ],
+                    slide: function( event, ui ) {
+                        minSliderGrade = ui.values[0];
+                        maxSliderGrade = ui.values[1];
+
+                        $(event.target).parent().find('.value-slider').html(ui.values[0] + ' - ' + ui.values[1]);
+                        toolsDisplayRunes();                        
+                    }
+                });
             });
         </script>
     <!-- END JAVASCRIPT -->

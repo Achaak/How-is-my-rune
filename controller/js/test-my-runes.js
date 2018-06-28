@@ -133,8 +133,8 @@ function displayRunes() {
                 "<td data-sort-value='" + rune.location + "' class='location'>" + rune.location + "</td>" +
                 "<td class='set'>"       + rune.set              + "</td>" +
                 "<td class='slot'>"      + rune.slot             + "</td>" +
-                "<td>" + rune.grade            + "</td>" +
-                "<td>" + rune.level            + "</td>" +
+                "<td class='grade'>"     + rune.grade            + "</td>" +
+                "<td class='level'>"     + rune.level            + "</td>" +
                 "<td class='quality'>"   + quality               + "</td>" +
                 "<td class='main-stat'>" + rune.pri_eff_type     + "</td>" +
                 "<td>" + rune.pri_eff_value    + "</td>" +
