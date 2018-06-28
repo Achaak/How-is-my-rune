@@ -194,24 +194,28 @@ select {
                 /* TOOLS */
                     .tools {
                         margin-top: 50px;
-                        padding: 15px 0px;
+                        padding: 5px 0px;
                         background-color: #232323;
                     }
-                        .tools select {
-                            width: 100%;
-                            border-radius: 3px;
-                            background-color: #232323;
-                            color: #DCDCDC;
-                            border: 2px solid #6d6d6d;
-                            padding: 3px 7px;
-                            font-size: 1em;
-                            height: 30px;
-                            -moz-appearance: textfield;
+                        .tool {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
                         }
-                        .tools label {
-                            color: gainsboro;
-                            font-weight: bold;
-                        }
+                            .tools select {
+                                width: 100%;
+                                border-radius: 3px;
+                                background-color: #232323;
+                                color: #DCDCDC;
+                                border: 2px solid #6d6d6d;
+                                padding: 3px 7px;
+                                font-size: 1em;
+                                height: 30px;
+                                -moz-appearance: textfield;
+                            }
+                            .tools label {
+                                color: gainsboro;
+                                font-weight: bold;
+                            }
                 /* END TOOLS */
 
                 /* FORM IMPORT */

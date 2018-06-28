@@ -131,19 +131,19 @@ function displayRunes() {
             "<tr>" +
                 "<td data-sort-value='" + rune.quality  + "' class='" + qualityColor + "'></td>" + 
                 "<td data-sort-value='" + rune.location + "' class='location'>" + rune.location + "</td>" +
-                "<td>" + rune.set              + "</td>" +
-                "<td>" + rune.slot             + "</td>" +
+                "<td class='set'>"       + rune.set              + "</td>" +
+                "<td class='slot'>"      + rune.slot             + "</td>" +
                 "<td>" + rune.grade            + "</td>" +
                 "<td>" + rune.level            + "</td>" +
-                "<td>" + quality               + "</td>" +
-                "<td>" + rune.pri_eff_type     + "</td>" +
+                "<td class='quality'>"   + quality               + "</td>" +
+                "<td class='main-stat'>" + rune.pri_eff_type     + "</td>" +
                 "<td>" + rune.pri_eff_value    + "</td>" +
                 "<td>" + rune.prefix_eff_type  + "</td>" +
                 "<td data-sort-value='" + (rune.prefix_eff_value == '' ? 0 : rune.prefix_eff_value) + "'>" + rune.prefix_eff_value + "</td>" +
                 tdStatSec +
                 "<td data-sort-value='" + rune.effiency    + "'>" + rune.effiency    + "%</td>" +
                 "<td data-sort-value='" + rune.effiencyMax + "'>" + rune.effiencyMax + "%</td>" +
-                "<td>" + utility + "</td>" +
+                "<td class='utility'>" + utility + "</td>" +
             "</tr>"
         );
         

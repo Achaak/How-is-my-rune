@@ -14,7 +14,7 @@ var runeUtility = [
 
 
 
-    { "utility" : "Slow nuker", "stats" : ["CRate", "CDmg" ] },
+    { "utility" : "Slow nuker", "stats" : ["CRate", "CDmg"] },
         { "utility" : "Slow ATK nuker", "stats" : ["ATK%", "CRate", "CDmg"] },
 
         { "utility" : "Slow DEF nuker", "stats" : ["DEF%" , "CRate", "CDmg"] },

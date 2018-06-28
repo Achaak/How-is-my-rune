@@ -19,6 +19,7 @@ function pageMyRunes() {
     $(".list-runes tbody tr").addClass("hidden-pages");
     
     $(".list-runes tbody tr:not(.hidden-tools)").slice((page-1)*elemByPage, page*elemByPage).removeClass("hidden-pages");
+    
     nbPageMyRune();
 }
 

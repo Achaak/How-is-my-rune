@@ -286,27 +286,64 @@
                 <div class='menu'>
                     <div class='tools'>
                         <div class='row'>
-                            <div class='col-md-4'>
-                                <label for='search-location'>Location</label>
-                                <select id='search-location'>
-                                    <option value='0'>All</option>
-                                    <option value='1'>Inventory</option>
-                                    <option value='2'>Equipped on monsters</option>
-                                </select>
+
+                            <div class='col-md-4 tool input-multi-choice'>
+                                <label for='search-set'>Set</label>
+                                <div class='selected' id='search-set'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>Accuracy</span>
+                                    <span>Blade</span>
+                                    <span>Despair</span>
+                                    <span>Destroy</span>
+                                    <span>Determination</span>
+                                    <span>Endure</span>
+                                    <span>Energy</span>
+                                    <span>Enhance</span>
+                                    <span>Fatal</span>
+                                    <span>Fight</span>
+                                    <span>Focus</span>
+                                    <span>Guard</span>
+                                    <span>Nemesis</span>
+                                    <span>Rage</span>
+                                    <span>Revenge</span>
+                                    <span>Shield</span>
+                                    <span>Swift</span>
+                                    <span>Tolerance</span>
+                                    <span>Vampire</span>
+                                    <span>Violent</span>
+                                    <span>Will</span>
+                                </div>                                
                             </div>
 
-                            <div class='col-md-4 input-multi-choice'>
+                            <div class='col-md-4 tool input-multi-choice'>
+                                <label for='search-slot'>Slot</label>
+                                <div class='selected' id='search-slot'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                    <span>4</span>
+                                    <span>5</span>
+                                    <span>6</span>
+                                </div>                                
+                            </div>
+
+                            <div class='col-md-4 tool input-multi-choice'>
                                 <label for='search-main-stat'>Main stat</label>
                                 <div class='selected' id='search-main-stat'>
 
                                 </div>
                                 <div class='possible-choice'>
                                     <span>HP%</span>
-                                    <span>HP</span>
+                                    <span>HP flat</span>
                                     <span>ATK%</span>
-                                    <span>ATK</span>
+                                    <span>ATK flat</span>
                                     <span>DEF%</span>
-                                    <span>DEF</span>
+                                    <span>DEF flat</span>
                                     <span>SPD</span>
                                     <span>CRate</span>
                                     <span>CDmg</span>
@@ -315,17 +352,52 @@
                                 </div>                                
                             </div>
 
-                            <div class='col-md-4 input-multi-choice'>
+                            <div class='col-md-4 tool input-multi-choice'>
                                 <label for='search-quality'>Quality</label>
                                 <div class='selected' id='search-quality'>
 
                                 </div>
                                 <div class='possible-choice'>
+                                    <span>Unknown</span>
                                     <span>Normal</span>
                                     <span>Magic</span>
                                     <span>Rare</span>
                                     <span>Hero</span>
                                     <span>Legendary</span>
+                                </div>                                
+                            </div>
+
+                            <div class='col-md-4 tool'>
+                                <label for='search-location'>Location</label>
+                                <select id='search-location'>
+                                    <option value='0'>All</option>
+                                    <option value='1'>Inventory</option>
+                                    <option value='2'>Equipped on monsters</option>
+                                </select>
+                            </div>
+
+                            <div class='col-md-4 tool input-multi-choice'>
+                                <label for='search-utility'>Utility</label>
+                                <div class='selected' id='search-utility'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>Accuracy nuker</span>
+                                    <span>ATK nuker</span>
+                                    <span>Bombers</span>
+                                    <span>DEF nuker</span>
+                                    <span>Healer/support</span>
+                                    <span>Healer/support ATK</span>
+                                    <span>Healer/support RES</span>
+                                    <span>HP nuker</span>
+                                    <span>Nuker</span>
+                                    <span>Raid frontliners</span>
+                                    <span>Raid monster</span>
+                                    <span>Slow accuracy nuker</span>
+                                    <span>Slow ATK nuker</span>
+                                    <span>Slow DEF nuker</span>
+                                    <span>Slow healer/support</span>
+                                    <span>Slow HP nuker</span>
                                 </div>                                
                             </div>
                         </div>

@@ -21,5 +21,7 @@ $(document).ready(function(){
             $(this).parent().parent().find(".selected").append("<span>" + $(this).text() + "</span>");
             $(this).addClass("isClicked");
         }
+        
+        toolsDisplayRunes();
     });
 });
