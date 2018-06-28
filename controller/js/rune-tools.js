@@ -1,13 +1,13 @@
 var runeUtility = [
     { "utility" : "Nuker", "stats" : ["SPD", "CRate", "CDmg" ] },
-        { "utility" : "Atk nuker", "stats" : ["SPD", "ATK%" , "CRate"] },
-        { "utility" : "Atk nuker", "stats" : ["SPD", "ATK%" , "CDmg" ] },
+        { "utility" : "ATK nuker", "stats" : ["SPD", "ATK%" , "CRate"] },
+        { "utility" : "ATK nuker", "stats" : ["SPD", "ATK%" , "CDmg" ] },
 
-        { "utility" : "Def nuker", "stats" : ["SPD", "DEF%" , "CRate"] },
-        { "utility" : "Def nuker", "stats" : ["SPD", "DEF%" , "CDmg" ] },
+        { "utility" : "DEF nuker", "stats" : ["SPD", "DEF%" , "CRate"] },
+        { "utility" : "DEF nuker", "stats" : ["SPD", "DEF%" , "CDmg" ] },
 
-        { "utility" : "Hp nuker", "stats" : ["SPD", "HP%"  , "CRate"] },
-        { "utility" : "Hp nuker", "stats" : ["SPD", "HP%"  , "CDmg" ] },
+        { "utility" : "HP nuker", "stats" : ["SPD", "HP%"  , "CRate"] },
+        { "utility" : "HP nuker", "stats" : ["SPD", "HP%"  , "CDmg" ] },
 
         { "utility" : "Accuracy nuker", "stats" : ["SPD", "ACC", "CRate"] },
         { "utility" : "Accuracy nuker", "stats" : ["SPD", "ACC", "CDmg" ] },
@@ -15,11 +15,11 @@ var runeUtility = [
 
 
     { "utility" : "Slow nuker", "stats" : ["CRate", "CDmg" ] },
-        { "utility" : "Slow atk nuker", "stats" : ["ATK%", "CRate", "CDmg"] },
+        { "utility" : "Slow ATK nuker", "stats" : ["ATK%", "CRate", "CDmg"] },
 
-        { "utility" : "Slow def nuker", "stats" : ["DEF%" , "CRate", "CDmg"] },
+        { "utility" : "Slow DEF nuker", "stats" : ["DEF%" , "CRate", "CDmg"] },
 
-        { "utility" : "Slow hp nuker", "stats" : ["HP%"  , "CRate", "CDmg"] },
+        { "utility" : "Slow HP nuker", "stats" : ["HP%"  , "CRate", "CDmg"] },
 
         { "utility" : "Slow accuracy nuker", "stats" : ["ACC", "CRate", "CDmg"] },
         { "utility" : "Slow accuracy nuker", "stats" : ["ACC", "ATK%" , "CDmg"] },
@@ -32,11 +32,11 @@ var runeUtility = [
     { "utility" : "Healer/support", "stats" : ["SPD", "DEF%", "ACC"] },
     { "utility" : "Healer/support", "stats" : ["SPD", "ACC" , "HP%"] },
     
-    { "utility" : "Healer/support atk", "stats" : ["SPD", "ATK%", "HP%"] },
-    { "utility" : "Healer/support atk", "stats" : ["SPD", "ATK%", "ACC"] },
+    { "utility" : "Healer/support ATK", "stats" : ["SPD", "ATK%", "HP%"] },
+    { "utility" : "Healer/support ATK", "stats" : ["SPD", "ATK%", "ACC"] },
 
-    { "utility" : "Healer/support res", "stats" : ["SPD", "RES", "HP%"] },
-    { "utility" : "Healer/support res", "stats" : ["SPD", "RES", "ACC"] },
+    { "utility" : "Healer/support RES", "stats" : ["SPD", "RES", "HP%"] },
+    { "utility" : "Healer/support RES", "stats" : ["SPD", "RES", "ACC"] },
 
 
 
@@ -125,7 +125,8 @@ function calcEfficiency(
     statOneType  , statOneValue, 
     statTwoType  , statTwoValue, 
     statThreeType, statThreeValue, 
-    statFourType , statFourValue 
+    statFourType , statFourValue,
+    runelevel
 ) {
     actualEfficiency = 0;
     maxEfficiency    = 0;
@@ -146,8 +147,8 @@ function calcEfficiency(
         actualEfficiency = (actualEfficiency+1)/2.8;
 
     // max stat
-        var runLevel = ($('.rune-level').val() > 12 ? 12 : $('.rune-level').val() );
-        maxEfficiency = ( (actualEfficiency*2.8) + (Math.round(((12-runLevel)/3))) * 0.2 ) / 2.8;
+        var runeLevel = (runelevel > 12 ? 12 : runelevel );
+        maxEfficiency = ( (actualEfficiency*2.8) + (Math.round(((12-runeLevel)/3))) * 0.2 ) / 2.8;
 
     // On 100%
         actualEfficiency = Math.round((actualEfficiency*100)*100)/100;
@@ -180,9 +181,22 @@ function getRuneUtility(mainType, statOneType, statTwoType, statThreeType, statF
             tmpArrStat.push(statFourType);  cptStat++;
         }
 
-        if(cptStat >= 3)
+        if(cptStat >= 3 && listUtility.indexOf(runeUtility[i].utility) < 0)
             listUtility.push(runeUtility[i].utility);
     }
     
     return listUtility;
+}
+
+function searchMonsterWithID(id) {
+    var monsterName = '';
+
+    for (var i = 0; i < list_monsters.length; i++) {
+        if(list_monsters[i].unit_master_id == id) {
+            monsterName = list_monsters[i].name;
+            break;
+        }
+    }
+
+    return monsterName;
 }

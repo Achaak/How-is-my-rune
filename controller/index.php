@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <base href="/">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2433389260772608",
-    enable_page_level_ads: true
-  });
-</script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-2433389260772608",
+        enable_page_level_ads: true
+    });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121446205-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-121446205-1');
+        </script>
+
     <title>How is my rune ? | SWRATE</title>
     <meta name="description" content="" />
     <meta property="og:title" content="How is my rune ? | SWRATE" />
@@ -27,6 +39,7 @@
 
         <link type="text/css" rel="stylesheet" href="framework/jquery-ui/jquery-ui.min.css">
         <link type="text/css" rel="stylesheet" href="framework/flexbox/flexboxgrid.min.css">
+        <link type="text/css" rel="stylesheet" href="framework/input-multi-choice/input-multi-choice.css">
     <!-- END CSS -->
 
     <link rel="icon" href="view/pictures/logo-swrate.ico">
@@ -272,7 +285,50 @@
             <article class='runes-tester'>
                 <div class='menu'>
                     <div class='tools'>
+                        <div class='row'>
+                            <div class='col-md-4'>
+                                <label for='search-location'>Location</label>
+                                <select id='search-location'>
+                                    <option value='0'>All</option>
+                                    <option value='1'>Inventory</option>
+                                    <option value='2'>Equipped on monsters</option>
+                                </select>
+                            </div>
 
+                            <div class='col-md-4 input-multi-choice'>
+                                <label for='search-main-stat'>Main stat</label>
+                                <div class='selected' id='search-main-stat'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>HP%</span>
+                                    <span>HP</span>
+                                    <span>ATK%</span>
+                                    <span>ATK</span>
+                                    <span>DEF%</span>
+                                    <span>DEF</span>
+                                    <span>SPD</span>
+                                    <span>CRate</span>
+                                    <span>CDmg</span>
+                                    <span>RES</span>
+                                    <span>ACC</span>
+                                </div>                                
+                            </div>
+
+                            <div class='col-md-4 input-multi-choice'>
+                                <label for='search-quality'>Quality</label>
+                                <div class='selected' id='search-quality'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>Normal</span>
+                                    <span>Magic</span>
+                                    <span>Rare</span>
+                                    <span>Hero</span>
+                                    <span>Legendary</span>
+                                </div>                                
+                            </div>
+                        </div>
                     </div>
 
                     <div class='upload'>
@@ -288,36 +344,60 @@
                     </div>
                 </div>
 
-                <table class='list-runes'>
-                    <tr>
-                        <th><span>Set</span></th>
-                        <th><span>Slot</span></th>
-                        <th><span>Grade</span></th>
-                        <th><span>Level</span></th>
-                        
-                        <th><span>Type</span></th>
-                        <th><span>Value</span></th>
+                <div class='nbRuneByPage'>
+                    <span>Show</span>
+                    <select>
+                        <option value='-1'>All</option>
+                        <option value='10' selected>10</option>
+                        <option value='25'>25</option>
+                        <option value='50'>50</option>
+                        <option value='100'>100</option>
+                    </select>
+                    <span>runes</span>
+                </div>
 
-                        <th><span>Type</span></th>
-                        <th><span>Value</span></th>
+                <table class='list-runes sort'>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th data-sort="string"><span>Location</span></th>
+                            <th data-sort="string"><span>Set</span></th>
+                            <th data-sort="int"><span>Slot</span></th>
+                            <th data-sort="int"><span>Grade</span></th>
+                            <th data-sort="int"><span>Level</span></th>
+                            <th data-sort="string"><span>Quality</span></th>
+                            
+                            <th data-sort="string"><span>Type</span></th>
+                            <th data-sort="int"><span>Value</span></th>
 
-                        <th><span>HP%</span></th>
-                        <th><span>HP</span></th>
-                        <th><span>DEF%</span></th>
-                        <th><span>DEF</span></th>
-                        <th><span>ATK%</span></th>
-                        <th><span>ATK</span></th>
-                        <th><span>SPD</span></th>
-                        <th><span>CRate</span></th>
-                        <th><span>CDmg</span></th>
-                        <th><span>RES</span></th>
-                        <th><span>ACC</span></th>
+                            <th data-sort="string"><span>Type</span></th>
+                            <th data-sort="int"><span>Value</span></th>
 
-                        <th><span>Eff.%</span></th>
-                        <th><span>Max Eff.%</span></th>
-                        <th><span>Utilities</span></th>
-                    </tr>
+                            <th data-sort="int"><span>HP%</span></th>
+                            <th data-sort="int"><span>HP</span></th>
+                            <th data-sort="int"><span>ATK%</span></th>
+                            <th data-sort="int"><span>ATK</span></th>
+                            <th data-sort="int"><span>DEF%</span></th>
+                            <th data-sort="int"><span>DEF</span></th>
+                            <th data-sort="int"><span>SPD</span></th>
+                            <th data-sort="int"><span>CRate</span></th>
+                            <th data-sort="int"><span>CDmg</span></th>
+                            <th data-sort="int"><span>RES</span></th>
+                            <th data-sort="int"><span>ACC</span></th>
+
+                            <th data-sort="float"><span>Eff.%</span></th>
+                            <th data-sort="float"><span>Max Eff.%</span></th>
+                            <th data-sort="string"><span>Utilities</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
                 </table>
+
+                <div class='pages'>
+
+                </div>
             </article>
         </section>
     <!-- END SECTION -->
@@ -334,16 +414,26 @@
     <!-- JAVASCRIPT -->
         <script src="framework/jquery/jquery.min.js"></script>
         <script src="framework/jquery-ui/jquery-ui.min.js"></script>
+        <script src="framework/stupidtable/stupidtable.min.js"></script>
+        <script src="framework/input-multi-choice/input-multi-choice.js"></script>
+
+        <script src="model/js/data/list_monsters.js"></script>
         
+        <script src="controller/js/other.js"></script>
         <script src="controller/js/rune-tools.js"></script>
+        <script src="controller/js/tools.js"></script>
         <script src="controller/js/modale.js"></script>
         <script src="controller/js/nav.js"></script>
         <script src="controller/js/import-runes.js"></script>
         <script src="controller/js/test-a-rune.js"></script>
         <script src="controller/js/test-my-runes.js"></script>
+        <script src="controller/js/test-my-runes-table.js"></script>
         
         <script type="text/javascript">
+            $(document).ready(function(){   
+                $("table.sort").stupidtable();
+            });
         </script>
     <!-- END JAVASCRIPT -->
 </body>
-</html>
+</html>	

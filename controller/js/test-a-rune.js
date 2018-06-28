@@ -9,6 +9,7 @@ $(document).ready(function(){
             $('tr.stat.stat-two'   ).find('.stat-type').val(), $('tr.stat.stat-two'   ).find('.stat-value').val(),
             $('tr.stat.stat-three' ).find('.stat-type').val(), $('tr.stat.stat-three' ).find('.stat-value').val(),
             $('tr.stat.stat-four'  ).find('.stat-type').val(), $('tr.stat.stat-four'  ).find('.stat-value').val(),
+            $('.rune-level').val()
         );
 
         displayEfficiency(result[0], result[1]);
@@ -21,6 +22,7 @@ $(document).ready(function(){
             $('tr.stat.stat-two'   ).find('.stat-type').val(), $('tr.stat.stat-two'   ).find('.stat-value').val(),
             $('tr.stat.stat-three' ).find('.stat-type').val(), $('tr.stat.stat-three' ).find('.stat-value').val(),
             $('tr.stat.stat-four'  ).find('.stat-type').val(), $('tr.stat.stat-four'  ).find('.stat-value').val(),
+            $('.rune-level').val()
         );
 
         displayEfficiency(result[0], result[1]);

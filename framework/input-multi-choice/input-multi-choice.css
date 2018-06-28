@@ -1,0 +1,48 @@
+.input-multi-choice {
+    position: relative;
+}
+    .input-multi-choice .selected {
+        width: 100%;
+        min-height: 30px;
+        border-radius: 3px;
+        border: 2px solid #6d6d6d;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+    }
+        .input-multi-choice .selected span {
+            color: gainsboro;
+            display: block;
+            padding: 3px 6px;
+            background-color: #3c3c3c;
+            border-radius: 2px;
+            margin: 2px 2px;
+            font-size: 0.8em;
+        }
+    .input-multi-choice .possible-choice {
+        display: none;
+    }
+    .input-multi-choice .possible-choice.open {
+        display: block;
+        position: absolute;
+        background-color: #232323;
+        width: calc(100% - 1rem);
+        margin-top: -2px;
+        z-index: 10;
+        border: 2px solid #6d6d6d;
+        border-radius: 3px;
+    }
+        .input-multi-choice .possible-choice span {
+            color: gainsboro;
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            padding: 5px 5px;
+        }
+        .input-multi-choice .possible-choice span:hover {
+            background-color: #3c3c3c;
+            transition: all 0.2s;
+        }
+        .input-multi-choice .possible-choice span.isClicked {
+            background-color: #3c3c3c;
+        }

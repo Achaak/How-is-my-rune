@@ -23,6 +23,25 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+select {
+    cursor: pointer;
+}
+
+.normal {
+    background-color: white;
+}
+.magic {
+    background-color: #06D366;
+}
+.rare {
+    background-color: #58EDE7;
+}
+.hero {
+    background-color: #E692EE;
+}
+.legendary {
+    background-color: #F4A554;
+}
 
 /* HEADER */
     header {
@@ -170,11 +189,29 @@ input::-webkit-inner-spin-button {
                 article.runes-tester .menu {                    
                     width: 800px;
                     margin: auto;
+                    margin-bottom: 30px;
                 }
                 /* TOOLS */
                     .tools {
                         margin-top: 50px;
+                        padding: 15px 0px;
+                        background-color: #232323;
                     }
+                        .tools select {
+                            width: 100%;
+                            border-radius: 3px;
+                            background-color: #232323;
+                            color: #DCDCDC;
+                            border: 2px solid #6d6d6d;
+                            padding: 3px 7px;
+                            font-size: 1em;
+                            height: 30px;
+                            -moz-appearance: textfield;
+                        }
+                        .tools label {
+                            color: gainsboro;
+                            font-weight: bold;
+                        }
                 /* END TOOLS */
 
                 /* FORM IMPORT */
@@ -202,7 +239,7 @@ input::-webkit-inner-spin-button {
                                 align-items: center;
                                 height: 100%;
                                 text-align: center;
-                                border: 3px dotted gainsboro;
+                                border: 3px dotted #6d6d6d;
                                 color: gainsboro;
                                 font-size: 1em;
                                 transition: all .4s;
@@ -217,23 +254,81 @@ input::-webkit-inner-spin-button {
                 /* END FORM IMPORT */
             /* END MENU */
 
+            /* NB RUNE BY PAGE */
+                .nbRuneByPage {
+                    color: #DCDCDC;
+                    font-weight: bold;
+                }
+                    .nbRuneByPage select {             
+                        border-radius: 3px;
+                        background-color: #2d2d2d;
+                        color: #DCDCDC;
+                        border: 2px solid #6d6d6d;
+                        padding: 3px 7px;
+                        font-size: 1em;
+                        -moz-appearance: textfield;
+                    }
+            /* END NB RUNE BY PAGE */
+
             /* TABLE */
+                tr.hidden-tools {
+                    display: none;
+                }
+                tr.hidden-pages {
+                    display: none;
+                }
+                
                 article.runes-tester table {
                     width: 100%;
                     border-collapse: collapse;  
-                    margin-top: 50px;
+                    margin-top: 10px;
                 }
-                    article.runes-tester table td, article.runes-tester table th {
-                        padding: 3px 5px;
-                        text-align: left;
-                        border: 1px solid #404040;
-                        color: #DCDCDC;
+                    article.runes-tester table tbody tr:hover {
+                        background-color: #3c3c3c;
+                        transition: all 0.2s;
                     }
-                        article.runes-tester table span {
-                            font-size: 1.2em;
+                        article.runes-tester table td, article.runes-tester table th {
+                            padding: 5px;
+                            text-align: left;
+                            border: 1px solid #404040;
+                            color: #DCDCDC;
+                        }
+                        article.runes-tester table th {
+                            cursor: pointer;
+                            background-color: #232323;
+                        }
+                        article.runes-tester table td.grind {
                             color: #fd9a00;
                         }
+                            article.runes-tester table span {
+                                font-size: 1.2em;
+                                color: #fd9a00;
+                            }
+                            article.runes-tester table li {
+                                list-style: none;
+                                font-size: 0.9em;
+                            }
             /* END TABLE */
+
+            /* PAGE */
+                .pages {
+                    text-align: center;
+                    color: gainsboro;
+                    margin-top: 15px;
+                }
+                    .pages span {
+                        padding: 5px 10px;
+                        background-color: #232323;
+                        margin: 0px 2px;
+                        border-radius: 2px;
+                    }
+                    .pages span.btn {
+                        cursor: pointer;
+                    }
+                    .pages span.btn.selected {
+                        color: #fd9a00;
+                    }
+            /* END PAGE */
         /* END RUNES-TESTER */
     /* END ARTICLE */
 /* END SECTION */
