@@ -19,9 +19,8 @@ var cptDisplayRunes = 0;
         if(cptDisplayRunes == 0) {
             clearInterval(timerDisplayRunes);
             toolsDisplayRunesAfter();
-            console.log("loopDisplayRunes FINISH");
+            $(".div-table-list-runes .loading").removeClass('show');
         }
-        console.log("loopDisplayRunes " + cptDisplayRunes);
     }
 /* END BOUCLE */
 
@@ -31,13 +30,12 @@ var cptDisplayRunes = 0;
             clearInterval(timerDisplayRunes);
             
         cptDisplayRunes = 2;
-        timerDisplayRunes = setInterval(loopDisplayRunes, 1000)
-        console.log("toolsDisplayRunes");
+        timerDisplayRunes = setInterval(loopDisplayRunes, 1000);
+        $(".div-table-list-runes .loading").addClass('show');
     }
 /* END */
 
 function toolsDisplayRunesAfter() {
-    console.log("toolsDisplayRunesAfter");
     if(cptDisplayRunes == 0) {
         $("table.list-runes tr").removeClass("hidden-tools");
 
@@ -113,6 +111,14 @@ function toolsDisplayRunesAfter() {
             }
             $("table.list-runes .level").not($(level)).parent().addClass("hidden-tools");
         /* END SEARCH LEVEL */
+
+        /* SEARCH SECOND STAT */
+            var second_stat = $("table.list-runes tbody tr");
+            for (var i = 0; i <= $('#search-second-stat span').length; i++) {
+                second_stat = second_stat.not($("table.list-runes tbody tr").not($('table.list-runes tbody tr td[stat-type="'+$('#search-second-stat span:nth-child('+(i+1)+')').text()+'"]').parent()));
+            }
+            $("table.list-runes tbody tr").not($(second_stat)).addClass("hidden-tools");
+        /* END SEARCH SECOND STAT */
 
         pageMyRunes();
     }

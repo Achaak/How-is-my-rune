@@ -7,7 +7,7 @@
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-2433389260772608",
+        google_ad_client: "ca-pub-2835499371908613",
         enable_page_level_ads: true
     });
     </script>
@@ -56,31 +56,90 @@
                 <div class='modal-content-flex'>
                     <div class='modal-content'>
                         <div class='close'>×</div>
-                        <div class='part'>
-                            <h2>How to use ?</h2>
-                            <p>Enter the stats of your rune and look at the efficiency of this one. It's simple ! :D</p>
-                        </div>
-                        <div class='part'>
-                            <h2>Credit</h2>
-                            <p>Create by <a href='https://github.com/Achaak' target='_blank'>Achak</a></p>
-                        </div>
-                        <div class='part'>
-                            <h2>Source</h2>
-                            <p>These calculations are based on Barion's Rune Efficiency Theory.</p>
-                            <p>The utility of the runes is based on <a href='https://www.reddit.com/user/Aknologya' target='_blank'>Aknologya</a>'s graphic on Reddit.</p>
-                        </div>
-                        
-                        <div class='part footer'>
-                            <ul>
-                                <li><a href='https://github.com/Achaak/How-is-my-rune'>Github</a></li>
-                                <li>© Achak <?php echo date('Y'); ?></li>
-                            </ul>
+                        <div class='row'>
+                            <div class='part col-xs-12'>
+                                <h2>PRESENTATION</h2>
+                                <p>Welcome to "How is my rune"! This website is intended for Summoners War game. Its function is to help you to calculate, sort or find the usefulness of your runes.</p>
+                            </div>
+
+                            <div class='col-xs-6'>
+                                <div class='part'>
+                                    <h2>HOW TO USE « TEST A RUNE »?</h2>
+                                    <p>This tool allows you to test the efficiency of a rune. To do this, simply fill in the statistics of your rune, as well as the level of this one. The tool will return you the efficiency and max efficiency, as well as the use that you will be able to make of it.</p>
+                                </div>
+                                <div class='part'>
+                                    <h2>HOW TO USE « TEST MY RUNES »?</h2>
+                                    <p>This tool allows you to display all your runes with their efficiency and utilities. To do this you will have to import your JSON file previously recovered serious software <a href='https://github.com/Xzandro/sw-exporter/releases' target='_blank'>SW-EXPORTER</a> or <a href='https://github.com/kakaroto/SWProxy/releases' target='_blank'>SWProxy</a>. After that, you can navigate through your runes by choosing parameters.</p>
+                                </div>
+                            </div>
+
+                            
+                            <div class='col-xs-3'>
+                                <div class='part'>
+                                    <h2>NEW FEATURES</h2>
+                                    <ul class='features'>
+                                        <li>
+                                            <ul>
+                                                <span class='date-feature'>20/09/2018</span>
+                                                <li>- Improved upload speed</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <span class='date-feature'>19/09/2018</span>
+                                                <li>- Added the rune removal feature</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='col-xs-3'>
+                                <div class='part'>
+                                    <h2>Credit</h2>
+                                    <p>Create by <a href='https://github.com/Achaak' target='_blank'>Achak</a></p>
+                                </div>
+                                <div class='part'>
+                                    <h2>Source</h2>
+                                    <p>These calculations are based on Barion's Rune Efficiency Theory.</p>
+                                    <p>The utility of the runes is based on <a href='https://www.reddit.com/user/Aknologya' target='_blank'>Aknologya</a>'s graphic on Reddit.</p>
+                                </div>
+                                <div class='part'>
+                                    <h2>SUPPORTS</h2>
+                                    <p>If you want to support the website or the creator: <a href='https://www.paypal.me/Achaak' target='_blank'>Paypal</a>.</p>
+                                </div>
+                            </div>
+                            
+                            <div class='part footer col-xs-12'>
+                                <ul>
+                                    <li><a href='https://github.com/Achaak/How-is-my-rune'>Github</a></li>
+                                    <li>© Achak <?php echo date('Y'); ?></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         <!-- END INFO MODAL -->
     <!-- END INFO -->
+    
+
+    <!-- DELETE RUNE -->
+        <!-- DELETE RUNE MODAL -->
+            <div class='modal-delete-rune modal-background'>
+                <div class='modal-content-flex'>
+                    <div class='modal-content'>
+                        <div class='part'>
+                            <p>Do you want to delete this rune ?</p>
+                        </div>
+                        <div class='part div-btn'>
+                            <div class='btn delete'>DELETE</div>
+                            <div class='btn cancel'>CANCEL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- END DELETE RUNE MODAL -->
+    <!-- END DELETE RUNE -->
 
 
     <!-- HEADER -->
@@ -124,6 +183,20 @@
                 </div>
 
                 <table>
+                <tr>
+                        <th>
+                            <span>Grade</span>
+                        </th>
+                        <td>
+                            <select class='rune-grade'>
+                                <?php 
+                                    for ($i=1; $i <= 6; $i++) { 
+                                        echo "<option value='".$i."'>".$i."</option>";
+                                    }
+                                ?>                                
+                            </select>
+                        </td>
+                    </tr>
                     <tr>
                         <th>
                             <span>Rune level</span>
@@ -287,7 +360,7 @@
                     <div class='tools'>
                         <div class='row'>
 
-                            <div class='col-md-4 tool input-multi-choice'>
+                            <div class='col-xs-4 tool input-multi-choice'>
                                 <label for='search-set'>Set</label>
                                 <div class='selected' id='search-set'>
 
@@ -317,7 +390,7 @@
                                 </div>                                
                             </div>
 
-                            <div class='col-md-4 tool input-multi-choice'>
+                            <div class='col-xs-4 tool input-multi-choice'>
                                 <label for='search-slot'>Slot</label>
                                 <div class='selected' id='search-slot'>
 
@@ -332,7 +405,7 @@
                                 </div>                                
                             </div>
 
-                            <div class='col-md-4 tool input-multi-choice'>
+                            <div class='col-xs-4 tool input-multi-choice'>
                                 <label for='search-main-stat'>Main stat</label>
                                 <div class='selected' id='search-main-stat'>
 
@@ -353,14 +426,14 @@
                             </div>
                             
 
-                            <div class='col-md-4 tool'>
+                            <div class='col-xs-4 tool'>
                                 <label for='range-slider-grade'>Grade</label>
                                 <span class='value-slider'>1 - 6</span>
                                 <div id='range-slider-grade'>
                                 </div>
                             </div>
                             
-                            <div class='col-md-4 tool'>
+                            <div class='col-xs-4 tool'>
                                 <label for='range-slider-level'>Level</label>
                                 <span class='value-slider'>0 - 15</span>
                                 <div id='range-slider-level'>
@@ -368,11 +441,28 @@
                             </div>
 
 
-                            <div class='col-md-4 tool'>
+                            <div class='col-xs-4 tool input-multi-choice'>
+                                <label for='search-second-stat'>Second stat</label>
+                                <div class='selected' id='search-second-stat'>
+
+                                </div>
+                                <div class='possible-choice'>
+                                    <span>HP%</span>
+                                    <span>HP flat</span>
+                                    <span>ATK%</span>
+                                    <span>ATK flat</span>
+                                    <span>DEF%</span>
+                                    <span>DEF flat</span>
+                                    <span>SPD</span>
+                                    <span>CRate</span>
+                                    <span>CDmg</span>
+                                    <span>RES</span>
+                                    <span>ACC</span>
+                                </div>                                
                             </div>
 
 
-                            <div class='col-md-4 tool'>
+                            <div class='col-xs-4 tool'>
                                 <label for='search-location'>Location</label>
                                 <select id='search-location'>
                                     <option value='0'>All</option>
@@ -381,7 +471,7 @@
                                 </select>
                             </div>
 
-                            <div class='col-md-4 tool input-multi-choice'>
+                            <div class='col-xs-4 tool input-multi-choice'>
                                 <label for='search-utility'>Utility</label>
                                 <div class='selected' id='search-utility'>
 
@@ -406,7 +496,7 @@
                                 </div>                                
                             </div>
 
-                            <div class='col-md-4 tool input-multi-choice'>
+                            <div class='col-xs-4 tool input-multi-choice'>
                                 <label for='search-quality'>Quality</label>
                                 <div class='selected' id='search-quality'>
 
@@ -448,46 +538,66 @@
                     <span>runes</span>
                 </div>
 
-                <table class='list-runes sort'>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th data-sort="string"><span>Location</span></th>
-                            <th data-sort="string"><span>Set</span></th>
-                            <th data-sort="int"><span>Slot</span></th>
-                            <th data-sort="int"><span>Grade</span></th>
-                            <th data-sort="int"><span>Level</span></th>
-                            <th data-sort="string"><span>Quality</span></th>
-                            
-                            <th data-sort="string"><span>Type</span></th>
-                            <th data-sort="int"><span>Value</span></th>
+                <div class='div-table-list-runes'>
+                    <div class='loading'><div class='loading-image'></div></div>
+                    <table class='list-runes sort'>
+                        <thead>
+                            <tr class="tr-subtile">
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th colspan='2'>Main stat</th>
+                                <th colspan='2'>Innate stat</th>
+                                <th colspan='11'>Substats</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th data-sort="string"><span>Location</span></th>
+                                <th data-sort="string"><span>Set</span></th>
+                                <th data-sort="int"><span>Slot</span></th>
+                                <th data-sort="int"><span>Grade</span></th>
+                                <th data-sort="int"><span>Level</span></th>
+                                <th data-sort="string"><span>Quality</span></th>
+                                
+                                <th data-sort="string"><span>Type</span></th>
+                                <th data-sort="int"><span>Value</span></th>
 
-                            <th data-sort="string"><span>Type</span></th>
-                            <th data-sort="int"><span>Value</span></th>
+                                <th data-sort="string"><span>Type</span></th>
+                                <th data-sort="int"><span>Value</span></th>
 
-                            <th data-sort="int"><span>HP%</span></th>
-                            <th data-sort="int"><span>HP</span></th>
-                            <th data-sort="int"><span>ATK%</span></th>
-                            <th data-sort="int"><span>ATK</span></th>
-                            <th data-sort="int"><span>DEF%</span></th>
-                            <th data-sort="int"><span>DEF</span></th>
-                            <th data-sort="int"><span>SPD</span></th>
-                            <th data-sort="int"><span>CRate</span></th>
-                            <th data-sort="int"><span>CDmg</span></th>
-                            <th data-sort="int"><span>RES</span></th>
-                            <th data-sort="int"><span>ACC</span></th>
+                                <th data-sort="int"><span>HP%</span></th>
+                                <th data-sort="int"><span>HP</span></th>
+                                <th data-sort="int"><span>ATK%</span></th>
+                                <th data-sort="int"><span>ATK</span></th>
+                                <th data-sort="int"><span>DEF%</span></th>
+                                <th data-sort="int"><span>DEF</span></th>
+                                <th data-sort="int"><span>SPD</span></th>
+                                <th data-sort="int"><span>CRate</span></th>
+                                <th data-sort="int"><span>CDmg</span></th>
+                                <th data-sort="int"><span>RES</span></th>
+                                <th data-sort="int"><span>ACC</span></th>
 
-                            <th data-sort="float"><span>Eff.%</span></th>
-                            <th data-sort="float"><span>Max Eff.%</span></th>
-                            <th data-sort="string"><span>Utilities</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    </tbody>
-                </table>
+                                <th data-sort="float"><span>Eff.%</span></th>
+                                <th data-sort="float"><span>Max Eff.%</span></th>
+                                <th data-sort="string"><span>Utilities</span></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
+                </div>
 
-                <div class='pages'>
+                <div class='pages unselect'>
 
                 </div>
             </article>

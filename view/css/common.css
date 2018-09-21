@@ -43,6 +43,14 @@ select {
     background-color: #F4A554;
 }
 
+.unselect {
+    -khtml-user-select : none;
+    -webkit-user-select : none;
+    -moz-user-select : -moz-none;
+    -ms-user-select : none;
+    user-select : none;
+}
+
 /* HEADER */
     header {
         width: 100%;
@@ -216,7 +224,7 @@ select {
                                 margin: 10px;
                             }
                             .tools .value-slider {
-                                color: orange;
+                                color: #fd9a00;
                                 font-weight: bold;
                                 float: right;
                             }
@@ -283,6 +291,78 @@ select {
             /* END NB RUNE BY PAGE */
 
             /* TABLE */
+                .div-table-list-runes {
+                    position: relative;
+                    min-height: 300px;
+                }
+                .div-table-list-runes .tr-subtile th {
+                    cursor: default;
+                }
+                /* LOADING */
+                    .div-table-list-runes .loading {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        z-index: 10;
+                        background-color: #02020285;
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: wait;
+                    }
+                        .div-table-list-runes .loading-image {    
+                            width: 130px;
+                            height: 130px;
+                            position: relative;
+                        }
+                            .div-table-list-runes .loading-image::after {
+                                content: "";
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                position: absolute;
+                                -webkit-animation: lds-eclipse 1.5s linear infinite;
+                                animation: lds-eclipse 1.5s linear infinite;
+                                border-radius: 50%;
+                                box-shadow: 0 6px 0 0 #fd9a00;
+                                -webkit-transform-origin: 50% 52%;
+                                transform-origin: 50% 52%;
+                            }
+                            @keyframes lds-eclipse {
+                                0% {
+                                  -webkit-transform: rotate(0deg);
+                                  transform: rotate(0deg);
+                                }
+                                50% {
+                                  -webkit-transform: rotate(180deg);
+                                  transform: rotate(180deg);
+                                }
+                                100% {
+                                  -webkit-transform: rotate(360deg);
+                                  transform: rotate(360deg);
+                                }
+                              }
+                              @-webkit-keyframes lds-eclipse {
+                                0% {
+                                  -webkit-transform: rotate(0deg);
+                                  transform: rotate(0deg);
+                                }
+                                50% {
+                                  -webkit-transform: rotate(180deg);
+                                  transform: rotate(180deg);
+                                }
+                                100% {
+                                  -webkit-transform: rotate(360deg);
+                                  transform: rotate(360deg);
+                                }
+                              }
+                    .div-table-list-runes .loading.show {
+                        display: flex;
+                    }
+                /* END LOADING */
+
                 tr.hidden-tools {
                     display: none;
                 }
@@ -316,10 +396,27 @@ select {
                                 font-size: 1.2em;
                                 color: #fd9a00;
                             }
-                            article.runes-tester table li {
-                                list-style: none;
-                                font-size: 0.9em;
-                            }
+                                article.runes-tester table ul.utilities {
+                                    display: block;
+                                    max-height: 15px;
+                                    overflow: hidden;
+                                    transition: max-height 1s;
+                                }
+                                article.runes-tester table tr:hover ul.utilities {
+                                    max-height: 500px;
+                                }
+                                    article.runes-tester table ul.utilities li, article.runes-tester table ul.rune-btn li {
+                                        list-style: none;
+                                        font-size: 0.9em;
+                                    }
+                                    article.runes-tester table ul.rune-btn li.delete {
+                                        background-image: url(../pictures/icons/delete.png);
+                                        background-size: 18px;
+                                        background-repeat: no-repeat;
+                                        height: 18px;
+                                        width: 18px;
+                                        cursor: pointer;
+                                    }
             /* END TABLE */
 
             /* PAGE */
@@ -341,6 +438,29 @@ select {
                         color: #fd9a00;
                     }
             /* END PAGE */
+
+            
+            /* MODAL DELETE RUNE */
+                .modal-delete-rune {
+                    text-align: center;
+                }
+                    .modal-delete-rune .div-btn {
+                        justify-content: center;
+                        display: flex;
+                    }
+                        .modal-delete-rune .div-btn .btn {
+                            background-color: gainsboro;
+                            padding: 2px 5px;
+                            margin: 2px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            border-radius: 2px;
+                        }
+                        .modal-delete-rune .div-btn .btn:hover {
+                            transition: all 0.2s;
+                            background-color: #adadad;
+                        }
+            /* END MODAL DELETE RUNE */
         /* END RUNES-TESTER */
     /* END ARTICLE */
 /* END SECTION */
@@ -363,7 +483,7 @@ select {
         }
     /* END ICON HELP */
 
-    /* MODAL INFO */
+    /* MODAL */
         .modal-background {
             position: fixed;
             top: 0;
@@ -416,7 +536,19 @@ select {
                         .modal-content p {
                             color: #DCDCDC;
                             padding: 5px 0;
+                            text-align: justify;
+                        }                        
+                        .modal-content ul.features {
+                            color: #DCDCDC;
+                            padding: 5px 0;
                         }
+                            .modal-content ul.features li {
+                                list-style: none;
+                                margin-left: 20px;
+                            }
+                            .modal-content ul.features .date-feature {
+                                font-weight: bold;
+                            }
                         .modal-content a {
                             color: #ec6400;
                             text-decoration: none;
@@ -433,5 +565,11 @@ select {
                             content: '-';
                             padding: 0 5px;
                         }
+    /* END MODAL */
+
+    /* MODAL INFO */
+        .modal-info .modal-content {
+            width: 1200px;
+        }
     /* END MODAL INFO */
 /* END INFO */

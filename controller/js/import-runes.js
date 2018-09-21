@@ -8,19 +8,13 @@ $(document).ready(function(){
 
         $('.import-loader').show();
 
-        $.ajax({    
-            url: "model/php/read-JSON.php", 
-            type: "POST",
-            data: formData,
-            dataType: 'json',
-            contentType: false,
-            processData: false,
-            success: function(results){  
-                if(results.codeError == 0) {
-                    setJson(results.contentJson);
-                }
-            }
-        });
+
+        var reader = new FileReader();
+        reader.onload = function(){
+            var json = jQuery.parseJSON(reader.result);
+            setJson(json);
+        };
+        reader.readAsText(files);
     });
 
 
@@ -64,5 +58,7 @@ $(document).ready(function(){
         displayRunes();
 
         $('.import-loader').hide();
+        
+        toolsDisplayRunes();
     }
 });

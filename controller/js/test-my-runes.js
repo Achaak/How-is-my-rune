@@ -1,3 +1,5 @@
+var id_delete_rune = null;
+
 class myRunes {
     constructor() {
         this.listRunes = Array();
@@ -23,7 +25,7 @@ class myRunes {
             sec_two_type    , (sec_two_value[0]   + sec_two_value[2]  ), 
             sec_three_type  , (sec_three_value[0] + sec_three_value[2]), 
             sec_four_type   , (sec_four_value[0]  + sec_four_value[2] ),
-            level
+            level, grade
         );
 
         var utility = getRuneUtility(pri_eff_type, sec_one_type, sec_two_type, sec_three_type, sec_four_type);
@@ -86,7 +88,7 @@ function displayRunes() {
                     grind = rune.sec_four_value[2];
                 }
 
-                tdStatSec +=    "<td data-sort-value='" + (value+grind) + "' class='" + (grind == 0 ? "" : "grind") + "'>" + 
+                tdStatSec +=    "<td data-sort-value='" + (value+grind) + "' class='" + (grind == 0 ? "" : "grind") + "' stat-type='"+ ((value+grind) == 0 ? "" : listValType[j])+"'>" + 
                                     ((value+grind) == 0 ? "" : (value+grind)) + (grind == 0 ? "" : " (" + grind + ")") +
                                 "</td>";
             }
@@ -97,7 +99,7 @@ function displayRunes() {
             for (var j = 0; j < rune.utility.length; j++) {
                 utility += '<li>' + rune.utility[j] + '</li>';
             }
-            utility = '<ul>' + utility + '</ul>';
+            utility = '<ul class="utilities">' + utility + '</ul>';
         /* END UTILITIES RUNE */
 
         /* COLOR QUALITY RUNE */
@@ -128,7 +130,7 @@ function displayRunes() {
 
 
         $(".list-runes tbody").append(
-            "<tr>" +
+            "<tr id-rune='"+i+"'>" +
                 "<td data-sort-value='" + rune.quality  + "' class='" + qualityColor + "'></td>" + 
                 "<td data-sort-value='" + rune.location + "' class='location'>" + rune.location + "</td>" +
                 "<td class='set'>"       + rune.set              + "</td>" +
@@ -144,10 +146,20 @@ function displayRunes() {
                 "<td data-sort-value='" + rune.effiency    + "'>" + rune.effiency    + "%</td>" +
                 "<td data-sort-value='" + rune.effiencyMax + "'>" + rune.effiencyMax + "%</td>" +
                 "<td class='utility'>" + utility + "</td>" +
+                "<td><ul class='rune-btn'><li class='delete'></li></ul></td>" +
             "</tr>"
-        );
-        
+        );        
     }
+    
+        
+    /* DELETE RUNE */
+        $(document).ready(function(){        
+            $(".rune-btn .delete").click(function(e){              
+                $('.modal-delete-rune').show("fade", 200);
+                id_delete_rune = $(e.target).parent().parent().parent().attr('id-rune');
+            });
+        });
+    /* END DELETE RUNE */
 
     pageMyRunes();
 }

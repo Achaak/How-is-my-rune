@@ -2,14 +2,15 @@ $(document).ready(function(){
     var actualEfficiency = 0;
     var maxEfficiency    = 0;
 
-    $(".stat-type, .rune-level").change(function(e){                    
+    $(".stat-type, .rune-level, .rune-grade").change(function(e){                    
         var result = calcEfficiency(
             $('tr.stat.innate-stat').find('.stat-type').val(), $('tr.stat.innate-stat').find('.stat-value').val(),
             $('tr.stat.stat-one'   ).find('.stat-type').val(), $('tr.stat.stat-one'   ).find('.stat-value').val(),
             $('tr.stat.stat-two'   ).find('.stat-type').val(), $('tr.stat.stat-two'   ).find('.stat-value').val(),
             $('tr.stat.stat-three' ).find('.stat-type').val(), $('tr.stat.stat-three' ).find('.stat-value').val(),
             $('tr.stat.stat-four'  ).find('.stat-type').val(), $('tr.stat.stat-four'  ).find('.stat-value').val(),
-            $('.rune-level').val()
+            $('.rune-level').val(),
+            $('.rune-grade').val()
         );
 
         displayEfficiency(result[0], result[1]);
@@ -22,7 +23,8 @@ $(document).ready(function(){
             $('tr.stat.stat-two'   ).find('.stat-type').val(), $('tr.stat.stat-two'   ).find('.stat-value').val(),
             $('tr.stat.stat-three' ).find('.stat-type').val(), $('tr.stat.stat-three' ).find('.stat-value').val(),
             $('tr.stat.stat-four'  ).find('.stat-type').val(), $('tr.stat.stat-four'  ).find('.stat-value').val(),
-            $('.rune-level').val()
+            $('.rune-level').val(),
+            $('.rune-grade').val()
         );
 
         displayEfficiency(result[0], result[1]);
