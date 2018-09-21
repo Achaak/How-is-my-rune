@@ -590,6 +590,8 @@
         <script src="framework/jquery-ui/jquery-ui.min.js"></script>
         <script src="framework/stupidtable/stupidtable.min.js"></script>
         <script src="framework/input-multi-choice/input-multi-choice.js"></script>
+
+        <script src="model/js/data/list_monsters.js"></script>
         
         <script src="controller/js/other.js"></script>
         <script src="controller/js/rune-tools.js"></script>
