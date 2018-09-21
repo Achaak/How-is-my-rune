@@ -4,14 +4,6 @@
     <base href="/">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-2835499371908613",
-        enable_page_level_ads: true
-    });
-    </script>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121446205-1"></script>
         <script>
@@ -78,12 +70,6 @@
                                 <div class='part'>
                                     <h2>NEW FEATURES</h2>
                                     <ul class='features'>
-                                        <li>
-                                            <ul>
-                                                <span class='date-feature'>20/09/2018</span>
-                                                <li>- Improved upload speed</li>
-                                            </ul>
-                                        </li>
                                         <li>
                                             <ul>
                                                 <span class='date-feature'>19/09/2018</span>
@@ -183,20 +169,6 @@
                 </div>
 
                 <table>
-                <tr>
-                        <th>
-                            <span>Grade</span>
-                        </th>
-                        <td>
-                            <select class='rune-grade'>
-                                <?php 
-                                    for ($i=1; $i <= 6; $i++) { 
-                                        echo "<option value='".$i."'>".$i."</option>";
-                                    }
-                                ?>                                
-                            </select>
-                        </td>
-                    </tr>
                     <tr>
                         <th>
                             <span>Rune level</span>
@@ -618,8 +590,6 @@
         <script src="framework/jquery-ui/jquery-ui.min.js"></script>
         <script src="framework/stupidtable/stupidtable.min.js"></script>
         <script src="framework/input-multi-choice/input-multi-choice.js"></script>
-
-        <script src="model/js/data/list_monsters.js"></script>
         
         <script src="controller/js/other.js"></script>
         <script src="controller/js/rune-tools.js"></script>

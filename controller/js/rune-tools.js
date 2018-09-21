@@ -56,72 +56,7 @@ var runeUtility = [
     { "utility" : "Raid frontliners" , "stats" : ["RES", "DEF%", "HP%"] }
 ];
 
-var maxValue = [{
-    "SPD"      : 5,
-    "ATK%"     : 10,
-    "ATK flat" : 20,
-    "DEF%"     : 10,
-    "DEF flat" : 20,
-    "HP%"      : 10,
-    "HP flat"  : 300,
-    "CRate"    : 10,
-    "CDmg"     : 10,
-    "RES"      : 10,
-    "ACC"      : 10
-},
-{
-    "SPD"      : 10,
-    "ATK%"     : 15,
-    "ATK flat" : 25,
-    "DEF%"     : 15,
-    "DEF flat" : 25,
-    "HP%"      : 15,
-    "HP flat"  : 525,
-    "CRate"    : 15,
-    "CDmg"     : 15,
-    "RES"      : 15,
-    "ACC"      : 15
-},
-{
-    "SPD"      : 15,
-    "ATK%"     : 25,
-    "ATK flat" : 40,
-    "DEF%"     : 25,
-    "DEF flat" : 40,
-    "HP%"      : 25,
-    "HP flat"  : 825,
-    "CRate"    : 15,
-    "CDmg"     : 20,
-    "RES"      : 20,
-    "ACC"      : 20
-},
-{
-    "SPD"      : 20,
-    "ATK%"     : 30,
-    "ATK flat" : 50,
-    "DEF%"     : 30,
-    "DEF flat" : 50,
-    "HP%"      : 30,
-    "HP flat"  : 1125,
-    "CRate"    : 20,
-    "CDmg"     : 25,
-    "RES"      : 25,
-    "ACC"      : 25
-},
-{
-    "SPD"      : 25,
-    "ATK%"     : 35,
-    "ATK flat" : 75,
-    "DEF%"     : 35,
-    "DEF flat" : 75,
-    "HP%"      : 35,
-    "HP flat"  : 1500,
-    "CRate"    : 25,
-    "CDmg"     : 25,
-    "RES"      : 35,
-    "ACC"      : 35
-},
-{
+var maxValue = {
     "SPD"      : 30,
     "ATK%"     : 40,
     "ATK flat" : 100,
@@ -133,7 +68,7 @@ var maxValue = [{
     "CDmg"     : 35,
     "RES"      : 40,
     "ACC"      : 40
-}];
+};
 
 function getSet(idSet) {
     var set = "";
@@ -191,22 +126,22 @@ function calcEfficiency(
     statTwoType  , statTwoValue, 
     statThreeType, statThreeValue, 
     statFourType , statFourValue,
-    runelevel, grade
+    runelevel
 ) {
     actualEfficiency = 0;
     maxEfficiency    = 0;
 
     
-    if(maxValue[grade-1][innetType]     != undefined)
-        actualEfficiency += innetValue     / maxValue[grade-1][innetType];
-    if(maxValue[grade-1][statOneType]   != undefined)
-        actualEfficiency += statOneValue   / maxValue[grade-1][statOneType];
-    if(maxValue[grade-1][statTwoType]   != undefined)
-        actualEfficiency += statTwoValue   / maxValue[grade-1][statTwoType];
-    if(maxValue[grade-1][statThreeType] != undefined)
-        actualEfficiency += statThreeValue / maxValue[grade-1][statThreeType];
-    if(maxValue[grade-1][statFourType]  != undefined)
-        actualEfficiency += statFourValue  / maxValue[grade-1][statFourType];
+    if(maxValue[innetType]     != undefined)
+        actualEfficiency += innetValue     / maxValue[innetType];
+    if(maxValue[statOneType]   != undefined)
+        actualEfficiency += statOneValue   / maxValue[statOneType];
+    if(maxValue[statTwoType]   != undefined)
+        actualEfficiency += statTwoValue   / maxValue[statTwoType];
+    if(maxValue[statThreeType] != undefined)
+        actualEfficiency += statThreeValue / maxValue[statThreeType];
+    if(maxValue[statFourType]  != undefined)
+        actualEfficiency += statFourValue  / maxValue[statFourType];
 
     // Actual stat
         actualEfficiency = (actualEfficiency+1)/2.8;
